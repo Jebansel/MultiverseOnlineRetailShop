@@ -33,6 +33,7 @@ const User = connection.define('User', userModel);
 // Product.hasOne(Category); // This added a productID to a category which
 // was unnecessary
 
+Product.belongsTo(Category);
 Category.hasMany(Product);
 
 
