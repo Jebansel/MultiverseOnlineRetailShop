@@ -1,0 +1,28 @@
+{
+  "name": "multiverseonlineretailshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "TEST.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jebansel/MultiverseOnlineRetailShop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jebansel/MultiverseOnlineRetailShop/issues"
+  },
+  "homepage": "https://github.com/Jebansel/MultiverseOnlineRetailShop#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "handlebars": "^4.7.7",
+    "node-fetch": "^3.0.0",
+    "sequelize": "^6.9.0",
+    "sqlite3": "^5.0.2"
+  }
+}
