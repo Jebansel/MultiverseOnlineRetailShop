@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 8010;
-const restaurantRoutes = require('./routes/web/restaurants');
-const menuRoutes = require('./routes/web/menus')
-const handlebars = require('./handlebars');
+const productRoutes = require('./routes/web/products');
+// const menuRoutes = require('./routes/web/menus')
+// const handlebars = require('./handlebars');
 
 // set-up view "engine" - res.render
 app.engine('handlebars', handlebars);
@@ -16,8 +16,8 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 // use restaurant routes
-app.use('/restaurants', restaurantRoutes);
-app.use('/menus', menuRoutes);
+app.use('/products', productRoutes);
+// app.use('/menus', menuRoutes);
 
 // serve an index page
 app.get('/', (req, res) => {
