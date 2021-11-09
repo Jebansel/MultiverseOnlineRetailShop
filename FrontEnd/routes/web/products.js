@@ -26,8 +26,19 @@ Router
   } catch (error) {
     return next(error);
   }
-
+})
+  .get('/:id', async (req, res, next) => {
+    try {
+      const response = await fetch(url + "/" + req.params.id)
+      const product = await response.json();
+    res.render('product', {product});
+    } catch (error) {
+        return next(error);
+    }
+  })
   
+
+
 
 // .get('/new', (req, res, next) => {
 //   res.render('newRestaurant');
@@ -48,6 +59,5 @@ Router
 // })
 
 
-});
 
 module.exports = Router;

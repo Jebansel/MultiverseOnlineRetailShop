@@ -1,19 +1,9 @@
 <div class='product'>
-  <h3>{{this.name}}</h3>
+  <h3>{{this.title}}</h3>
   <img src='{{this.image}}' alt='{{this.name}}' />
   <div class='promo-blocks__actions'>
     <a href='/products/{{this.id}}' class='anchor--button'>
       View
     </a>
-    <a
-      href='/products/{{this.id}}/edit'
-      data-id='{{this.id}}'
-      class='anchor--button'
-    >
-      Add To Cart
-    </a>
-    <button type='button' data-id='{{this.id}}' onClick='deleteProduct("{{this.id}}")'>
-      Edit
-    </button>
   </div>
 </div>
