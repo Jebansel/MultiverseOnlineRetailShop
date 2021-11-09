@@ -100,8 +100,9 @@ app
   });
 
 async function start() {
-  await Product.bulkCreate(productsjson);
   await Category.bulkCreate(categoriesjson);
+  await Product.bulkCreate(productsjson);
+  
   await connection.sync({
     logging: false, // don't log everything
     // force: true, // drop tables each time
