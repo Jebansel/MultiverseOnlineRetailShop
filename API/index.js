@@ -1,5 +1,6 @@
 const { connection, Product, User, Category } = require("./sequelizeConnect");
-
+const productsjson = require ("./products.json")
+const categoriesjson = require ("./categories.json")
 const express = require("express");
 const app = express();
 const port = 3010;
@@ -99,8 +100,8 @@ app
   });
 
 async function start() {
-  await Product.bulkCreate(products.json);
-  await Category.bulkCreate(categories.json);
+  await Product.bulkCreate(productsjson);
+  await Category.bulkCreate(categoriesjson);
   await connection.sync({
     logging: false, // don't log everything
     // force: true, // drop tables each time
