@@ -33,6 +33,19 @@ app
     } catch (e) {
       res.status(400).send(e.message);
     }
+  })
+
+  .get("/api/products/:id", async (req, res) => {
+    try {
+      const singleProduct = await Product.findAll({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.status(200).send(singleProduct);
+    } catch (e) {
+      res.status(400).send(e.message);
+    }
   });
 
 app
