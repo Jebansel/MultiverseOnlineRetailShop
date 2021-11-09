@@ -22,10 +22,12 @@ Router
   try {
     const response = await fetch(url);
     const products = await response.json();
-    res.render('prodcuts', { products });
+    res.render('products', { products });
   } catch (error) {
     return next(error);
   }
+
+  
 
 // .get('/new', (req, res, next) => {
 //   res.render('newRestaurant');

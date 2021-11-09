@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const port = 8010;
 const productRoutes = require('./routes/web/products');
-// const productRoutes = require('./routes/web/products')
-// const handlebars = require('./handlebars');
+const handlebars = require('./handlebars');
 
 // set-up view "engine" - res.render
 app.engine('handlebars', handlebars);
