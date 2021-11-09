@@ -15,9 +15,9 @@ app.use(express.static('public'));
 // support urlencoded bodies (e.g. form POST)
 app.use(express.urlencoded({ extended: true }));
 
-// use restaurant routes
+// use product routes
 app.use('/products', productRoutes);
-// app.use('/menus', menuRoutes);
+// app.use('/products', productRoutes);
 
 // serve an index page
 app.get('/', (req, res) => {
