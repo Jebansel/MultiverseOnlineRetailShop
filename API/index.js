@@ -107,7 +107,7 @@ async function start() {
   
   await connection.sync({
     logging: false, // don't log everything
-    // force: true, // drop tables each time
+  //  force: true, // drop tables each time
   });
 }
 
