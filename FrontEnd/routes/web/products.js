@@ -31,7 +31,7 @@ Router
     try {
       const response = await fetch(url + "/" + req.params.id)
       const product = await response.json();
-    res.render('product', {product});
+      res.render('product', {product});
     } catch (error) {
         return next(error);
     }

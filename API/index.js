@@ -38,7 +38,7 @@ app
 
   .get("/api/products/:id", async (req, res) => {
     try {
-      const singleProduct = await Product.findAll({
+      const singleProduct = await Product.findOne({
         where: {
           id: req.params.id,
         },
