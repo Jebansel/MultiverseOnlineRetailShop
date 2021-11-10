@@ -1,7 +1,8 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "hello.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,14 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "0.0.1-security",
-    "express-handlebars": "^5.3.4",
-    "handlebars": "^4.7.7",
-    "jest": "^27.3.1",
-    "node-fetch": "^2.6.1",
+    "express": "^4.17.1",
     "sequelize": "^6.9.0",
     "sqlite3": "^5.0.2"
-  },
-  "devDependencies": {},
-  "description": ""
+  }
 }
