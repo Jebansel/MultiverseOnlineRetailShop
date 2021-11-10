@@ -5,6 +5,7 @@ const {
 } = require('@handlebars/allow-prototype-access');
 
 Handlebars.registerPartial('head', '{{head}}');
+Handlebars.registerPartial('header', '{{header}}');
 
 // setup our templating engine
 const handlebars = expressHandlebars({

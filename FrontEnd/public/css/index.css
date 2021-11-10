@@ -205,3 +205,27 @@ label {
 .main-nav ul li {
   margin-right: 1rem; /* 1rem = 18px */
 }
+
+.centred {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.margin-top--1 {
+  margin-top: 1rem;
+}

@@ -1,33 +1,37 @@
-<div>
-  <a href="/products">See the products</a>
-  <center>
-    <h3>Your Basket</h3>
-  </center>
+<div class="centred">
+  <h3>Your Basket</h3>
 </div>
 <div>
   <table class="table table-striped">
-    <thead>
+    <tr>
+      <!-- table row -->
+      <th>Product</th> <!-- table header -->
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    <div id="tableData">
       <tr>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
+        <td>T-shirt</td> <!-- table data -->
+        <td>9.00</td>
+        <td>1</td>
+        <td>9.00</td>
       </tr>
-    </thead>
-    <tbody>
-      
-    </tbody>
+      <tr>
+        <td>T-shirt</td>
+        <td>9.00</td>
+        <td>1</td>
+        <td>9.00</td>
+      </tr>
+    </div>
   </table>
 </div>
 <div>
-  <center>
-    <h3>Total:</h3>
-  </center>
+  <h3 class="centred margin-top--1 ">Total:</h3>
 </div>
-<div>
-  <center><a href="/basket/checkout" class="btn btn-primary">Checkout</a></center>
-
-</div>
+<!-- <div>
+  <a href="/basket/checkout" class="btn btn-primary">Checkout</a>
+</div> -->
 
 <script>
   window.onload = async function () {
@@ -36,47 +40,49 @@
     const html = getHTML(basketProducts);
     insertHTML(html);
     //console.log(basketProducts);
-  }; 
-  
+  };
+
   function getLocalStorageItems() {
-    productIds = JSON.parse(localStorage.getItem("basket")); 
+    productIds = JSON.parse(localStorage.getItem("basket"));
     return productIds.map(item => parseInt(item));
-  } 
-  
+  }
+
   async function getProducts(productIds) {
     const data = {
       productIds: productIds
-    } 
+    }
     const response = await
       fetch(`http://localhost:3010/api/basket`, {
-        method: "POST", 
-        body: JSON.stringify(data), 
+        method: "POST",
+        body: JSON.stringify(data),
         headers: { 'content-type': 'application/json', }
       })
     const products = await response.json();
     return products
   }
 
-  function getHTML(products){
+  function getHTML(products) {
     let html = "";
-    for (let product of products) { 
+    for (let product of products) {
       html += ` <tr>
         <td>${product.title}</td>
         <td>${product.price}</td>
         <td>Quantity</td>
         <td>Total</td>
       </tr> `
-     }
-     //console.log(html)
-     return html
+    }
+    //console.log(html)
+    return html
   }
 
-  function insertHTML(html){
+  function insertHTML(html) {
     const tBody = document.querySelector("tbody");
     tBody.innerHTML = html;
   }
 </script>
 
+
+<!--
 /*
 
 1. Find a way to push new products added to the basket to the basket array in localStorage
@@ -88,10 +94,12 @@ currentProducts.push(newProduct) (index.js)
 
 2. Delete item from localStorage and refresh/reload /basket page
 
-3. Basket total. Consider adding a getTotal function that takes products and will calulate total of all products, then add to the total HTML element
+3. Basket total. Consider adding a getTotal function that takes products and will calulate total of all products, then
+add to the total HTML element
 
 4. Sort CSS formatting for basket. Look into table styles.
 
 5. Format and comment functions
 
 */
+-->
