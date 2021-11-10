@@ -2,7 +2,7 @@
   <h3>Your Basket</h3>
 </div>
 <div>
-  <table class="table table-striped">
+  <table id="basket" class="table table-striped">
     <tr>
       <!-- table row -->
       <th>Product</th> <!-- table header -->
@@ -10,9 +10,7 @@
       <th>Quantity</th>
       <th>Total</th>
     </tr>
-    <div id="tableData">
 
-    </div>
   </table>
 </div>
 <div>
@@ -65,8 +63,9 @@
   }
 
   function insertHTML(html) {
-    const tBody = document.querySelector("tbody");
-    tBody.innerHTML = html;
+    let basketHtml = document.querySelector("#basket").innerHTML
+    basketHtml += html
+    document.querySelector("#basket").innerHTML = basketHtml
   }
 </script>
 
