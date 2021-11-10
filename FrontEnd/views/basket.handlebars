@@ -1,6 +1,15 @@
 test
 <script>
-    window.onload = function () { getProducts(); };
+        window.onload = function () { 
+            const productIds = getLocalStorageItems();
+            console.log(productIds)
+            //getProducts();
+        };
+
+    function getLocalStorageItems(){
+        productIds = JSON.parse(localStorage.getItem("basket"));
+        return productIds.map( item => parseInt(item));
+    }
 
     async function getProducts() {
         const data = {
