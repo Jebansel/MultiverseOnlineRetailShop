@@ -99,19 +99,18 @@ app
     }
   });
 
-app.post("/api/cart", async (req, res) => {
+app.post("/api/basket", async (req, res) => {
   console.log(req.body);
   try {
-    const basket = Product.findAll({
+    const basket = await Product.findAll({
       where: {
-        id: [req.body]
+        id: req.body.productIds
       }
     });
     res.status(200).send(basket);
   } catch (e) {
     res.status(400).send(e.message);
   }
-
 })
 
 

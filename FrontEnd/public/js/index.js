@@ -3,7 +3,5 @@ async function addToBasket(id) {
     //console.log(id);
     
       console.log(id)
-      localStorage.setItem( "cart", JSON.stringify([id]))
-
+      localStorage.setItem( "basket", JSON.stringify([id]))
   }
-  

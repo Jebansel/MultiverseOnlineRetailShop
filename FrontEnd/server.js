@@ -23,6 +23,14 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/basket', async (req, res, next) => {
+  try {
+    res.render('basket');
+  } catch (error) {
+      return next(error);
+  }
+});
+
 app.listen(port, () => {
   console.log('Listening on port ' + port);
 });
