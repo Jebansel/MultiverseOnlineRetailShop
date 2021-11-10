@@ -8,27 +8,26 @@
 
     <div class="product">
       <h3>{{product.title}}</h3>
-      <img src="{{product.image}}" alt="{{product.title}}" />
-      <div class="promo-blocks__actions">
+      <img src="{{product.image}}" alt="{{product.title}}" /><br /><br /><br
+      /><br />
+      <div>
+        <button
+          type="button"
+          data-id="{{product.id}}"
+          onClick='addToBasket("{{product.id}}")'
+        >
+          Add To Basket
+        </button>
+
+        <br />
+
+      </div>
+
+      <div>
         <div>
-          <button
-            type="button"
-            data-id="{{product.id}}"
-            onClick='addToBasket("{{product.id}}")'
-          >
-            Add To Basket
-          </button>
+          <h4>£ {{product.price}}</h4>
 
-          <br />
-
-        </div>
-
-        <div>
-          <div>
-            <h4>£ {{product.price}}</h4>
-
-            <h5>{{product.description}}</h5>
-          </div>
+          <h5>{{product.description}}</h5>
         </div>
       </div>
     </div>
