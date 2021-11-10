@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 <center><div >
+=======
+<div>
+>>>>>>> 4f871030f486f2f33a235b72436a12d2da70db0c
     <a href="/basket"><br>View Basket<br><br><br></a>
     <br>
 </div>
 
+<<<<<<< HEAD
 <div class = 'product'>
 <h3>{{product.title}}</h3>
 <img src='{{product.image}}' alt='{{product.title}}' />
@@ -19,3 +24,20 @@
     <h5>{{product.description}}</h5></div></div>
 
 </center>
+=======
+<div class='product'>
+    <h3>{{product.title}}</h3>
+    <img src='{{product.image}}' alt='{{product.title}}' />
+    <div class='promo-blocks__actions'>
+        <button type='button' data-id='{{product.id}}' onClick='addToBasket("{{product.id}}")'>
+            Add To Basket
+        </button>
+
+
+    </div>
+    <div> <br>
+        <h4>£ {{product.price}}</h4>
+        <h5>{{product.description}}</h5>
+    </div>
+</div>
+>>>>>>> 4f871030f486f2f33a235b72436a12d2da70db0c

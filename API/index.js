@@ -1,6 +1,6 @@
 const { connection, Product, User, Category } = require("./sequelizeConnect");
-const productsjson = require ("./products.json")
-const categoriesjson = require ("./categories.json")
+const productsjson = require("./products.json")
+const categoriesjson = require("./categories.json")
 const express = require("express");
 const app = express();
 const port = 3010;
@@ -99,15 +99,30 @@ app
     }
   });
 
+app.post("/api/basket", async (req, res) => {
+  console.log(req.body);
+  try {
+    const basket = await Product.findAll({
+      where: {
+        id: req.body.productIds
+      }
+    });
+    res.status(200).send(basket);
+  } catch (e) {
+    res.status(400).send(e.message);
+  }
+})
+
+
 async function start() {
 
   // Comment/Comment Out as necessary
   // await Category.bulkCreate(categoriesjson);
   // await Product.bulkCreate(productsjson);
-  
+
   await connection.sync({
     logging: false, // don't log everything
-  //  force: true, // drop tables each time
+    //  force: true, // drop tables each time
   });
 }
 
