@@ -1,4 +1,4 @@
-<div >
+<center><div >
     <a href="/basket"><br>View Basket<br><br><br></a>
     <br>
 </div>
@@ -7,10 +7,15 @@
 <h3>{{product.title}}</h3>
 <img src='{{product.image}}' alt='{{product.title}}' />
 <div class='promo-blocks__actions'>
-    <a href='/products/{{product.id}}/add' data-id='{{product.id}}' class='anchor--button'>
+   <div> <a href='/products/{{product.id}}/add' data-id='{{product.id}}' class='anchor--button'>
         Add Basket
     </a>
-    <h4>{{product.price}}</h4>
-    <h5>{{product.description}}</h5>
-</div>
-</div>
+    <br>
+    
+ </div>   
+
+<div><div><h4>£ {{product.price}}</h4>
+    
+    <h5>{{product.description}}</h5></div></div>
+
+</center>
