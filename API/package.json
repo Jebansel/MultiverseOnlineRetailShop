@@ -9,7 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "epxress": "0.0.1-security",
+    "express": "0.0.1-security",
     "express-handlebars": "^5.3.4",
     "handlebars": "^4.7.7",
     "jest": "^27.3.1",

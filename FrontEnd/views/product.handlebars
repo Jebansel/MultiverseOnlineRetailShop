@@ -1,16 +1,20 @@
-<div >
+<div>
     <a href="/basket"><br>View Basket<br><br><br></a>
     <br>
 </div>
 
-<div class = 'product'>
-<h3>{{product.title}}</h3>
-<img src='{{product.image}}' alt='{{product.title}}' />
-<div class='promo-blocks__actions'>
-    <a href='/products/{{product.id}}/add' data-id='{{product.id}}' class='anchor--button'>
-        Add Basket
-    </a>
-    <h4>{{product.price}}</h4>
-    <h5>{{product.description}}</h5>
-</div>
+<div class='product'>
+    <h3>{{product.title}}</h3>
+    <img src='{{product.image}}' alt='{{product.title}}' />
+    <div class='promo-blocks__actions'>
+        <button type='button' data-id='{{product.id}}' onClick='addToBasket("{{product.id}}")'>
+            Add To Basket
+        </button>
+
+
+    </div>
+    <div> <br>
+        <h4>£ {{product.price}}</h4>
+        <h5>{{product.description}}</h5>
+    </div>
 </div>
