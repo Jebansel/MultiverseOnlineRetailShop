@@ -14,16 +14,9 @@
         <th>Total</th>
       </tr>
     </thead>
-    {{!-- <tbody>
-      {{#each basket}}
-      <tr>
-        <td>{{name}}</td>
-        <td>{{price}}</td>
-        <td>{{quantity}}</td>
-        <td>{{total}}</td>
-      </tr>
-      {{/each}}
-    </tbody> --}}
+    <tbody>
+      
+    </tbody>
   </table>
 </div>
 <div>
@@ -37,9 +30,12 @@
 </div>
 
 <script>
-  window.onload = function () {
+  window.onload = async function () {
     const productIds = getLocalStorageItems();
-    getProducts(productIds);
+    const basketProducts = await getProducts(productIds);
+    const html = getHTML(basketProducts);
+    insertHTML(html);
+    //console.log(basketProducts);
   }; 
   
   function getLocalStorageItems() {
@@ -58,6 +54,25 @@
         headers: { 'content-type': 'application/json', }
       })
     const products = await response.json();
-    console.log(products)
+    return products
+  }
+
+  function getHTML(products){
+    let html = "";
+    for (let product of products) { 
+      html += ` <tr>
+        <td>${product.title}</td>
+        <td>${product.price}</td>
+        <td>Quantity</td>
+        <td>Total</td>
+      </tr> `
+     }
+     //console.log(html)
+     return html
+  }
+
+  function insertHTML(html){
+    const tBody = document.querySelector("tbody");
+    tBody.innerHTML = html;
   }
 </script>
