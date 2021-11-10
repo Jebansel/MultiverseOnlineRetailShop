@@ -42,7 +42,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -51,7 +51,7 @@ table {
 }
 
 body {
-  font-family: "Open Sans", serif;
+  font-family: 'Open Sans', serif;
   background-color: ivory;
 }
 
@@ -59,7 +59,7 @@ h1,
 h2,
 h3 {
   color: #333;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   margin-top: 0.5rem;
 }
 
@@ -196,4 +196,12 @@ input {
 
 label {
   display: block;
+}
+
+.main-nav ul {
+  display: flex;
+}
+
+.main-nav ul li {
+  margin-right: 1rem; /* 1rem = 18px */
 }
