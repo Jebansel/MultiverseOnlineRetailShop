@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div>
   <center><h3>Your Basket</h3></center>
 </div>
@@ -31,33 +30,17 @@
       href="/basket/checkout"
       class="btn btn-primary"
     >Checkout</a></center>
+
 </div>
-=======
-test
+
 <script>
-        window.onload = function () { 
-            const productIds = getLocalStorageItems();
-            getProducts(productIds);
-        };
-
-    function getLocalStorageItems(){
-        productIds = JSON.parse(localStorage.getItem("basket"));
-        return productIds.map( item => parseInt(item));
-    }
-
-    async function getProducts(productIds) {
-        const data = {
-            productIds: productIds
-        }
-        const response = await
-            fetch(`http://localhost:3010/api/basket`, {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: { 'content-type': 'application/json', }
-            })
-        const products = await response.json()
-        console.log(products)
-    }
+  window.onload = function () { const productIds = getLocalStorageItems();
+  getProducts(productIds); }; function getLocalStorageItems(){ productIds =
+  JSON.parse(localStorage.getItem("basket")); return productIds.map( item =>
+  parseInt(item)); } async function getProducts(productIds) { const data = {
+  productIds: productIds } const response = await
+  fetch(`http://localhost:3010/api/basket`, { method: "POST", body:
+  JSON.stringify(data), headers: { 'content-type': 'application/json', } })
+  const products = await response.json() console.log(products) }
 
 </script>
->>>>>>> 4f871030f486f2f33a235b72436a12d2da70db0c
