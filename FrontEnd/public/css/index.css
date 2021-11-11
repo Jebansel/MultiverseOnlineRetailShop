@@ -102,6 +102,7 @@ button:hover,
   color: white;
 }
 
+
 .container {
   position: relative;
   max-width: 1024px;
@@ -248,6 +249,9 @@ nav .logo-text {
   color: rgb(49, 23, 197);
   font-size: 35px;
   text-decoration: none;
+}
+nav .logo-text:hover{
+  color:rgb(42, 155, 20);
 }
 
 nav ul li {
