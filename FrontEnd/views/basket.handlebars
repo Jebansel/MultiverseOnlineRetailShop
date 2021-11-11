@@ -26,12 +26,11 @@
   function getTotalPrice(basketProducts) {
     let total = 0
 
-    // 1. turn the below into a for loop
-    total += basketProducts[0].price
-    total += basketProducts[1].price  
-
-    // 2. add the total to the total HTML element
+    for (let product of basketProducts) {
+      total += product.price
+    }
     console.log(total)
+    return total
   }
 
   function getLocalStorageItems() {
