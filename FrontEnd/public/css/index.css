@@ -90,7 +90,17 @@ main {
 
 button:hover,
 .anchor--button:hover {
-  background-color: #d34a61;
+  background-color: #4bd33e;
+}
+
+
+.danger_button:hover {
+  background-color: #f55c48;
+  color:black;
+}
+.danger_button {
+  background-color: #FF0000;
+  color: white;
 }
 
 .container {
@@ -118,6 +128,7 @@ button:hover,
   list-style: disc;
 }
 
+
 .anchor--button,
 button {
   font-size: 1rem;
@@ -125,8 +136,10 @@ button {
   background-color: #22147f;
   color: white;
   text-decoration: none;
-  cursor: pointer;
+  cursor: pointer;  
   margin-right: 0.5rem;
+  border-radius: 0.5rem;
+
 }
 
 .anchor--button {
@@ -263,7 +276,9 @@ nav ul li a {
   text-decoration: none;
 }
 nav ul li a:hover {
-  background-color: crimson;
+  background-color: rgb(42, 155, 20);
+  color:white;
+  border-radius: 0.5rem;
 }
 
 nav ul li ul {
@@ -277,3 +292,4 @@ nav ul li ul {
 nav ul li:hover ul {
   display: block;
 }
+
