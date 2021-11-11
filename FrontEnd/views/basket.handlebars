@@ -32,6 +32,10 @@
     insertHTML(html);
   };
   
+  /**
+ * gets the price of products from an array and adds it to a total variable
+ * @param array basketproducts
+ */
   function getTotalPrice(basketProducts) {
     let total = 0
 
@@ -43,6 +47,10 @@
     document.querySelector("#total").innerHTML = `Total: £${total}`;
   }
 
+  /**
+ * runs on load and retrieves the local storage items and parses it
+ * @param 
+ */
   function getLocalStorageItems() {
     productIds = JSON.parse(localStorage.getItem("basket"));
     return productIds.map(item => parseInt(item));
