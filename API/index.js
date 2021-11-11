@@ -1,6 +1,6 @@
 const { connection, Product, User, Category } = require("./sequelizeConnect");
-const productsjson = require("./products.json")
-const categoriesjson = require("./categories.json")
+const productsjson = require("./products.json");
+const categoriesjson = require("./categories.json");
 const express = require("express");
 const app = express();
 const port = 3010;
@@ -47,53 +47,16 @@ app
     } catch (e) {
       res.status(400).send(e.message);
     }
-  });
-
-app
-  .get("/api/category", async (req, res) => {
-    try {
-      const category = await Category.findAll({});
-
-      res.status(200).send(category);
-    } catch (e) {
-      res.status(400).send(e.message);
-    }
   })
 
-  .post("/api/category", async (req, res) => {
-    // creates a category
+  .get("/api/products/category/:categoryId", async (req, res) => {
     try {
-      const category = await Category.create(req.body);
-
-      res.status(201).send(category);
-    } catch (e) {
-      res.status(400).send(e.message);
-    }
-  })
-
-  .put("/api/category/:id", async (req, res) => {
-    const toUpdate = await Category.findByPk(req.params.id);
-    await toUpdate.update(req.body);
-    res.status(202).send(toUpdate);
-  })
-
-  .post("/api/category/:id/product", async (req, res) => {
-    // creates a product with a categoryID
-
-    try {
-      // create a row in the database using sequelize create method
-      const category = await Category.findOne({
+      const categoryBasedProducts = await Product.findAll({
         where: {
-          id: req.params.id,
+          CategoryId: req.params.categoryId,
         },
       });
-
-      const products = await Product.create(req.body);
-
-      category.addProduct(products);
-
-      // 200 = success
-      res.status(200).send(products);
+      res.status(200).send(categoryBasedProducts);
     } catch (e) {
       res.status(400).send(e.message);
     }
@@ -104,18 +67,16 @@ app.post("/api/basket", async (req, res) => {
   try {
     const basket = await Product.findAll({
       where: {
-        id: req.body.productIds
-      }
+        id: req.body.productIds,
+      },
     });
     res.status(200).send(basket);
   } catch (e) {
     res.status(400).send(e.message);
   }
-})
-
+});
 
 async function start() {
-
   // Comment/Comment Out as necessary
   // await Category.bulkCreate(categoriesjson);
   // await Product.bulkCreate(productsjson);

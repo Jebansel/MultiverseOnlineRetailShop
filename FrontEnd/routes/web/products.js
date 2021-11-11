@@ -1,45 +1,50 @@
-const express = require('express');
+const express = require("express");
 const Router = express.Router();
-const fetch = require('node-fetch');
-const config = require('../../config');
+const fetch = require("node-fetch");
+const config = require("../../config");
 const url = `${config.url.products}`; // http://localhost:3010/api/products
 
-Router
-
-.post('/', async (req, res, next) => {
+Router.post("/", async (req, res, next) => {
   try {
     await fetch(url, {
-      method: 'post',
+      method: "post",
       body: JSON.stringify(req.body),
-      headers: {'Content-Type': 'application/json'},
+      headers: { "Content-Type": "application/json" },
     });
-    res.redirect('/products');
-  } catch(error) {
-    return next(error);
-  }
-})
-.get('/', async (req, res, next) => {
-  try {
-    const response = await fetch(url);
-    const products = await response.json();
-    res.render('products', { products });
+    res.redirect("/products");
   } catch (error) {
     return next(error);
   }
 })
-  .get('/:id', async (req, res, next) => {
+  .get("/", async (req, res, next) => {
     try {
-      const response = await fetch(url + "/" + req.params.id)
-      const product = await response.json();
-      res.render('product', {product});
+      const response = await fetch(url);
+      const products = await response.json();
+      res.render("products", { products });
     } catch (error) {
-        return next(error);
+      return next(error);
     }
   })
-  
-
-
-
+  .get("/:id", async (req, res, next) => {
+    try {
+      const response = await fetch(url + "/" + req.params.id);
+      const product = await response.json();
+      res.render("product", { product });
+    } catch (error) {
+      return next(error);
+    }
+  })
+  .get("/category/:categoryId", async (req, res, next) => {
+    try {
+      const response = await fetch(
+        url + "/category" + "/" + req.params.categoryId
+      );
+      const products = await response.json();
+      res.render("products", { products });
+    } catch (error) {
+      return next(error);
+    }
+  });
 
 // .get('/new', (req, res, next) => {
 //   res.render('newRestaurant');
@@ -58,7 +63,5 @@ Router
 // .get('/:id/edit', (req, res, next) => {
 //   res.render('editRestaurant', {restaurantID: req.params.id});
 // })
-
-
 
 module.exports = Router;
