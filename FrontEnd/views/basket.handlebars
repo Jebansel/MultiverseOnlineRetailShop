@@ -7,8 +7,7 @@
       <!-- table row -->
       <th>Product</th> <!-- table header -->
       <th>Price</th>
-      <th>Quantity</th>
-      <th>Total</th>
+      <th>Delete</th>
     </tr>
 
   </table>
@@ -54,8 +53,12 @@
       html += ` <tr>
         <td>${product.title}</td>
         <td>${product.price}</td>
-        <td>Quantity</td>
-        <td>Total</td>
+        <td><button
+          type="button"
+          onClick='removeFromBasket("${product.id}")'
+        >
+          Remove From Basket
+        </button></td>
       </tr> `
     }
     //console.log(html)

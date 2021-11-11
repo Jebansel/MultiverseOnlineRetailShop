@@ -22,7 +22,9 @@ async function addToBasket(id) {
   currentProducts.push(id)
 
   localStorage.setItem("basket", JSON.stringify(currentProducts));
-console.log(JSON.parse(localStorage.getItem("basket")))
+
+  //console.log(JSON.parse(localStorage.getItem("basket")))
+
   // addProduct = JSON.stringify(currentProducts)
   // addProduct 
   // console.log(currentProducts)
@@ -40,3 +42,11 @@ console.log(JSON.parse(localStorage.getItem("basket")))
 //   localStorage.setItem("basket", JSON.stringify([currentProducts]));
 //   currentProducts.push(newProduct)
 // }
+
+async function removeFromBasket(id){
+
+  currentProducts = JSON.parse(localStorage.getItem("basket"));
+  currentProducts = currentProducts.filter(item => item !== id);
+  localStorage.setItem("basket", JSON.stringify(currentProducts));
+  window.location.reload();
+}
