@@ -186,9 +186,7 @@ button {
   }
   .product img,
   .promo-blocks > div img {
-    height: 20rem;
-    width: 14rem;
-
+   
     position: relative;
     border-radius: 2rem;
   }
