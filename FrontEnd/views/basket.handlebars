@@ -11,7 +11,7 @@
   </table>
 </div>
 <div>
-  <h3 class="centred margin-top--1">Total:</h3>
+  <h3 id ="total" class="centred margin-top--1"></h3>
 </div>
 
 <script>
@@ -30,7 +30,7 @@
       total += product.price
     }
     console.log(total)
-    return total
+    document.querySelector("#total").innerHTML = `Total: £${total}`;
   }
 
   function getLocalStorageItems() {
@@ -57,7 +57,7 @@
     for (let product of products) {
       html += ` <tr>
         <td>${product.title}</td>
-        <td>${product.price}</td>
+        <td>£${product.price}</td>
         <td><button
           type="button"
           onClick='removeFromBasket("${product.id}")'
