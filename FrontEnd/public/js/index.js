@@ -22,3 +22,9 @@ async function removeFromBasket(id){
   window.alert("Item Removed from Basket");
   window.location.reload();
 }
+
+async function purchase() {
+  localStorage.clear("basket")
+  window.alert("Thank you for your purchase. Expect a delivery in the next 10 seconds :)");
+  window.location.reload()
+}
