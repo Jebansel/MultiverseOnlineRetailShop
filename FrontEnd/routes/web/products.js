@@ -46,22 +46,4 @@ Router.post("/", async (req, res, next) => {
     }
   });
 
-// .get('/new', (req, res, next) => {
-//   res.render('newRestaurant');
-// })
-
-// .get('/:id', async (req, res, next) => {
-//   try {
-//     const response = await fetch(url + "/" + req.params.id)
-//     const restaurant = await response.json();
-//   res.render('restaurant', {restaurant});
-//   } catch (error) {
-//       return next(error);
-//   }
-// })
-
-// .get('/:id/edit', (req, res, next) => {
-//   res.render('editRestaurant', {restaurantID: req.params.id});
-// })
-
 module.exports = Router;
