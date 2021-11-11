@@ -33,7 +33,7 @@
     let total = 0
 
     for (let product of basketProducts) {
-      total += product.price
+      total += parseFloat(product.price)
     }
     console.log(total)
     total = Math.round(total * 100) / 100
