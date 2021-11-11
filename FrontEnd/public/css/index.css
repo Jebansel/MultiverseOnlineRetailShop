@@ -64,7 +64,6 @@ h3 {
 }
 
 p {
-  max-width: 66ch;
   line-height: 1.5;
 }
 
@@ -102,6 +101,7 @@ button:hover,
   background-color: #FF0000;
   color: white;
 }
+
 
 .container {
   position: relative;
@@ -186,9 +186,7 @@ button {
   }
   .product img,
   .promo-blocks > div img {
-    height: 20rem;
-    width: 14rem;
-
+   
     position: relative;
     border-radius: 2rem;
   }
@@ -209,10 +207,6 @@ input {
 
 label {
   display: block;
-}
-
-.main-nav ul {
-  display: flex;
 }
 
 .main-nav ul li {
@@ -242,27 +236,23 @@ tr:nth-child(even) {
 .margin-top--1 {
   margin-top: 1rem;
 }
+
 nav {
   background-color: wheat;
-  width: 98%;
-  height: 65px;
+  padding: 1.5rem;
 }
 
-nav p {
+nav .logo-text {
   font-family: arial;
   color: rgb(49, 23, 197);
   font-size: 35px;
-  line-height: 0px;
-  float: left;
-  padding: 0px 20px;
+  text-decoration: none;
 }
-
-nav ul {
-  float: left;
+nav .logo-text:hover{
+  color:rgb(42, 155, 20);
 }
 
 nav ul li {
-  float: left;
   list-style: none;
   position: relative;
 }
@@ -270,7 +260,7 @@ nav ul li {
 nav ul li a {
   display: block;
   font-family: arial;
-  font-size: 14px;
+  font-size: 17px;
   color: rgb(15, 83, 35);
   padding: 13px 14px;
   text-decoration: none;
@@ -293,3 +283,23 @@ nav ul li:hover ul {
   display: block;
 }
 
+.about-band-image {
+  width: 100%;
+}
+
+@media screen and (min-width: 967px) {
+  nav {
+    height: 71px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-nav ul {
+    display: flex;
+  }
+
+  nav .logo-text {
+    margin-right: 1rem;
+  }
+}
