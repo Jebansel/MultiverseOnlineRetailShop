@@ -14,7 +14,10 @@ async function addToBasket(id) {
   localStorage.setItem("basket", JSON.stringify(currentProducts));
   window.alert("Item Added to Basket");
 }
-
+/**
+ * removes product ID to basket
+ * @param string id 
+ */
 async function removeFromBasket(id){
   currentProducts = JSON.parse(localStorage.getItem("basket"));
   currentProducts = currentProducts.filter(item => item !== id);
@@ -23,6 +26,10 @@ async function removeFromBasket(id){
   window.location.reload();
 }
 
+/**
+ * clears the basket
+ * @param  
+ */
 async function purchase() {
   localStorage.clear("basket")
   window.alert("Thank you for your purchase. Expect a delivery in the next 10 seconds :)");
