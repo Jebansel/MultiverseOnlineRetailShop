@@ -18,9 +18,21 @@
   window.onload = async function () {
     const productIds = getLocalStorageItems();
     const basketProducts = await getProducts(productIds);
+    getTotalPrice(basketProducts)
     const html = getHTML(basketProducts);
     insertHTML(html);
   };
+
+  function getTotalPrice(basketProducts) {
+    let total = 0
+
+    // 1. turn the below into a for loop
+    total += basketProducts[0].price
+    total += basketProducts[1].price  
+
+    // 2. add the total to the total HTML element
+    console.log(total)
+  }
 
   function getLocalStorageItems() {
     productIds = JSON.parse(localStorage.getItem("basket"));
