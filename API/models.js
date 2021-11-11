@@ -12,7 +12,7 @@ const productModel = {
     },
   },
   price: {
-    type: Sequelize.FLOAT,
+    type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notNull: {
