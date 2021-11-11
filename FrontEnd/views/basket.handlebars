@@ -2,23 +2,17 @@
   <h3>Your Basket</h3>
 </div>
 <div>
-  <table id="basket" class="table table-striped">
+  <table id="basket">
     <tr>
-      <!-- table row -->
-      <th>Product</th> <!-- table header -->
+      <th>Product</th>
       <th>Price</th>
-      <th>Quantity</th>
-      <th>Total</th>
+      <th>Delete</th>
     </tr>
-
   </table>
 </div>
 <div>
-  <h3 class="centred margin-top--1 ">Total:</h3>
+  <h3 class="centred margin-top--1">Total:</h3>
 </div>
-<!-- <div>
-  <a href="/basket/checkout" class="btn btn-primary">Checkout</a>
-</div> -->
 
 <script>
   window.onload = async function () {
@@ -26,7 +20,6 @@
     const basketProducts = await getProducts(productIds);
     const html = getHTML(basketProducts);
     insertHTML(html);
-    //console.log(basketProducts);
   };
 
   function getLocalStorageItems() {
@@ -54,11 +47,14 @@
       html += ` <tr>
         <td>${product.title}</td>
         <td>${product.price}</td>
-        <td>Quantity</td>
-        <td>Total</td>
+        <td><button
+          type="button"
+          onClick='removeFromBasket("${product.id}")'
+        >
+          Remove From Basket
+        </button></td>
       </tr> `
     }
-    //console.log(html)
     return html
   }
 
@@ -68,26 +64,3 @@
     document.querySelector("#basket").innerHTML = basketHtml
   }
 </script>
-
-
-<!--
-/*
-
-1. Find a way to push new products added to the basket to the basket array in localStorage
-
-let currentProducts = JSON.parse(localStorage.getItem("basket"))
-currentProducts.push(newProduct) (index.js)
-
-[1, 5, 6, 8]
-
-2. Delete item from localStorage and refresh/reload /basket page
-
-3. Basket total. Consider adding a getTotal function that takes products and will calulate total of all products, then
-add to the total HTML element
-
-4. Sort CSS formatting for basket. Look into table styles.
-
-5. Format and comment functions
-
-*/
--->
