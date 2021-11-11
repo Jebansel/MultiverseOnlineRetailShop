@@ -12,11 +12,13 @@ async function addToBasket(id) {
   // add product ID to array
   currentProducts.push(id)
   localStorage.setItem("basket", JSON.stringify(currentProducts));
+  window.alert("Item Added to Basket");
 }
 
 async function removeFromBasket(id){
   currentProducts = JSON.parse(localStorage.getItem("basket"));
   currentProducts = currentProducts.filter(item => item !== id);
   localStorage.setItem("basket", JSON.stringify(currentProducts));
+  window.alert("Item Removed from Basket");
   window.location.reload();
 }
