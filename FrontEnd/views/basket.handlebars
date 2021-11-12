@@ -11,16 +11,12 @@
     </tr>
   </table>
 </div>
-<div class ="centred">
-  <h3 id ="total" class=" margin-top--1"></h3>
-  <button 
-    
-          type="button"
-          onClick='purchase()'
-        >
-          Purchase
-        </button>
-        
+<div class="centred">
+  <h3 id="total" class=" margin-top--1"></h3>
+  <button type="button" onClick='purchase()'>
+    Purchase
+  </button>
+
 </div>
 
 <script>
@@ -31,7 +27,7 @@
     const html = getHTML(basketProducts);
     insertHTML(html);
   };
-  
+
   /**
  * gets the price of products from an array and adds it to a total variable
  * @param array basketproducts
