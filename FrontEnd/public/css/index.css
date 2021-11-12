@@ -78,7 +78,7 @@ img {
   max-width: 100%;
 }
 .productImg {
-  max-width: 40%;
+  max-height: 30rem;
 }
 main {
   margin: 1.5rem 0;
