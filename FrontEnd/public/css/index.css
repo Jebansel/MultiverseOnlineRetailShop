@@ -66,11 +66,6 @@ h3 {
 p {
   line-height: 1.5;
 }
-
-a {
-  color: #7e2811;
-}
-
 button {
   padding: 0.41rem;
 }
@@ -82,7 +77,9 @@ li {
 img {
   max-width: 100%;
 }
-
+.productImg {
+  max-width: 40%;
+}
 main {
   margin: 1.5rem 0;
 }
@@ -188,7 +185,7 @@ button {
   .promo-blocks > div img {
    
     position: relative;
-    border-radius: 2rem;
+  
   }
 
   .product-details {
@@ -268,13 +265,13 @@ nav ul li a {
 nav ul li a:hover {
   background-color: rgb(42, 155, 20);
   color:white;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
 }
 
 nav ul li ul {
   display: none;
   position: absolute;
-  background-color: rgb(250, 248, 144);
+  background-color: rgb(236, 98, 144);
   padding: 5px;
   border-radius: 0px 0px 4px 4px;
 }
@@ -289,10 +286,10 @@ nav ul li:hover ul {
 
 @media screen and (min-width: 967px) {
   nav {
-    height: 71px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+  
   }
 
   .main-nav ul {
