@@ -56,6 +56,10 @@
     return productIds.map(item => parseInt(item));
   }
 
+  /**
+ * gets the productIds and posts them into the basket API page
+ * @param array productIds
+ */
   async function getProducts(productIds) {
     const data = {
       productIds: productIds
@@ -70,6 +74,9 @@
     return products
   }
 
+  /**
+ * for every product that is retreived from products it is inserted into this HTML page
+ */
   function getHTML(products) {
     let html = "";
     for (let product of products) {
@@ -87,6 +94,10 @@
     return html
   }
 
+  /**
+ * this chooses the id of the section to insert the products into 
+ * links to the previous function
+ */
   function insertHTML(html) {
     let basketHtml = document.querySelector("#basket").innerHTML
     basketHtml += html
